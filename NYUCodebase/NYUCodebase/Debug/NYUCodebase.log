@@ -1,0 +1,7 @@
+﻿  main.cpp
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(63): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(83): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(105): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(127): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  NYUCodebase.vcxproj -> C:\Users\Zaoli Jiang\Desktop\CS3113-master\project_template\Windows\NYUCodebase\Debug\NYUCodebase.exe
+  NYUCodebase.vcxproj -> C:\Users\Zaoli Jiang\Desktop\CS3113-master\project_template\Windows\NYUCodebase\Debug\NYUCodebase.pdb (Full PDB)
