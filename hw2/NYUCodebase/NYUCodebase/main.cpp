@@ -12,6 +12,7 @@
 #include "stb_image.h"
 #include <vector>
 #include <random>
+#include "time.h"
 //#include "assert.h"
 
 #ifdef _WINDOWS
@@ -69,7 +70,7 @@ void DrawText(ShaderProgram *program, int fontTexture, std::string text, float s
 			texture_x, texture_y + texture_size,
 		});
 	}
-	//glBindTexture(GL_TEXTURE_2D, fontTexture);
+	glBindTexture(GL_TEXTURE_2D, fontTexture);
 
 	glUseProgram(program->programID);
 	glVertexAttribPointer(program->positionAttribute, 2, GL_FLOAT, false, 0, vertexData.data());
@@ -93,16 +94,17 @@ int main(int argc, char *argv[])
 #endif
 	SDL_Event event;
 	glViewport(0, 0, 640, 360);
-	ShaderProgram program(RESOURCE_FOLDER"vertex.glsl", RESOURCE_FOLDER "fragment.glsl");
-
+	//ShaderProgram program(RESOURCE_FOLDER"vertex.glsl", RESOURCE_FOLDER "fragment.glsl");
+	ShaderProgram program(RESOURCE_FOLDER"vertex_textured.glsl", RESOURCE_FOLDER"fragment_textured.glsl");
 	GLuint left = LoadTexture(RESOURCE_FOLDER"left.png");
 	GLuint right = LoadTexture(RESOURCE_FOLDER"right.png");
-	GLuint white = LoadTexture(RESOURCE_FOLDER"white.png");
+	GLuint yellow = LoadTexture(RESOURCE_FOLDER"yellow.png");
 
 	Matrix projectionMatrix;
 	Matrix modelMatrix;
 	Matrix viewMatrix;
-	projectionMatrix.setOrthoProjection(-3.55, 3.55, -2.0f, 2.0f, -1.0f, 1.0f);
+	//projectionMatrix.setOrthoProjection(-3.55, 3.55, -2.0f, 2.0f, -1.0f, 1.0f);
+	projectionMatrix.setOrthoProjection(0.0, 7.0, 0.0, 4.0f, -1.0f, 1.0f);
 	glUseProgram(program.programID);
 
 	float lastFrameTicks = 0.0f;
@@ -116,9 +118,14 @@ int main(int argc, char *argv[])
 	int r1 = 0;
 	int r2 = 0;
 	int r3 = 0;
-	srand(NULL);
+	srand((int)time(NULL));
 	bool done = false;
-	//GLuint font = LoadTexture(RESOURCE_FOLDER"font1.png");
+	float prev_ball_x = 0.0;
+	float prev_ball_y = 0.0;
+	GLuint font = LoadTexture(RESOURCE_FOLDER"font2.png");
+	bool game = true;
+
+
 	while (!done) {
 		while (SDL_PollEvent(&event)) {
 			if (event.type == SDL_QUIT || event.type == SDL_WINDOWEVENT_CLOSE) {
@@ -138,251 +145,289 @@ int main(int argc, char *argv[])
 		float speed = 100;
 
 		glClear(GL_COLOR_BUFFER_BIT);
-
-		//left paddle
-		glBindTexture(GL_TEXTURE_2D, white);
 		modelMatrix.identity();
-		modelMatrix.Translate(0.0, left_y_pos, 0.0);
-		program.setModelMatrix(modelMatrix);
-		program.setProjectionMatrix(projectionMatrix);
-		program.setViewMatrix(viewMatrix);
-
-		//glBindTexture(GL_TEXTURE_2D, white);
-
-		float vertices[] = { -3.6f, -0.8f, -3.6f, 0.0f, -3.3f, 0.0f, -3.6f, -0.8f, -3.3f, 0.0f, -3.3f, -0.8f };
-
-		float t2[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
-		glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t2);
-		glEnableVertexAttribArray(program.texCoordAttribute);
-		if (keys[SDL_SCANCODE_W] && left_y_pos < 2.0) {
-			left_y_pos += elapsed * 2;
-		}
-		else if (keys[SDL_SCANCODE_S] && left_y_pos > -1.25) {
-			left_y_pos -= elapsed * 2;
-		}
-
-		glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices);
-		glEnableVertexAttribArray(program.positionAttribute);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glDisableVertexAttribArray(program.positionAttribute);
-
-		//right paddle
-		glBindTexture(GL_TEXTURE_2D, white);
-		modelMatrix.identity();
-		modelMatrix.Translate(0.0, right_y_pos, 0.0);
-		program.setModelMatrix(modelMatrix);
-		program.setProjectionMatrix(projectionMatrix);
-		program.setViewMatrix(viewMatrix);
-
-		
-
-		float vertices1[] = { 3.6f, -0.8f, 3.6f, 0.0f, 3.3f, 0.0f, 3.6f, -0.8f, 3.3f, 0.0f, 3.3f, -0.8f };
-		float t3[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
-		glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t3);
-		glEnableVertexAttribArray(program.texCoordAttribute);
-		if (keys[SDL_SCANCODE_UP] && right_y_pos < 2.0) {
-			right_y_pos += elapsed * 2;
-		}
-		else if (keys[SDL_SCANCODE_DOWN] && right_y_pos > -1.25) {
-			right_y_pos -= elapsed * 2;
-		}
-
-		glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices1);
-		glEnableVertexAttribArray(program.positionAttribute);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glDisableVertexAttribArray(program.positionAttribute);
-
-		//ball
-		glBindTexture(GL_TEXTURE_2D, white);
-		modelMatrix.identity();
-		modelMatrix.Translate(ball_pos_x, ball_pos_y, 0.0);
-
-		program.setModelMatrix(modelMatrix);
-		program.setProjectionMatrix(projectionMatrix);
-		program.setViewMatrix(viewMatrix);
-
-		/*if (ball_pos_x < -3.32) { // left paddle lost
-		//ball_pos_x += 2.2 *elapsed;
-		//ball_pos_y += 0;
-		modelMatrix.identity();
-		//modelMatrix.Translate(-2.5, -1.0, 0.0);
-		program.setModelMatrix(modelMatrix);
-		GLuint font = LoadTexture(RESOURCE_FOLDER"font1.png");
-		//DrawText(&program, font, "right paddle won! press Space to end game", 0.25 , 0.0);
-		//modelMatrix.identity();
-		modelMatrix.identity();
-		//modelMatrix.Translate(-2.5, -1.0, 0.0);
+		modelMatrix.Translate(1.0, 2.0, 0);
 		program.setModelMatrix(modelMatrix);
 
-		if (keys[SDL_SCANCODE_SPACE]) {
-		done = true;
-		}
-		//done == true;
+		DrawText(&program, font, "use S and W to move left paddle", 0.15, 0.0);
+		modelMatrix.identity();
+		modelMatrix.Translate(0.4, 1.5, 0);
+		program.setModelMatrix(modelMatrix); 
+			glClear(GL_COLOR_BUFFER_BIT);
+			modelMatrix.identity();
+			modelMatrix.Translate(1.0, 2.0, 0);
+			program.setModelMatrix(modelMatrix);
 
-		}*/
+			DrawText(&program, font, "use S and W to move left paddle", 0.15, 0.0);
+			modelMatrix.identity();
+			modelMatrix.Translate(0.4, 1.5, 0);
+			program.setModelMatrix(modelMatrix);
 
+			DrawText(&program, font, "use up and down arrow to move right paddle", 0.15, 0.0);
 
-		/*if (ball_pos_x > 3.2) { // right paddle lost
-		done = true;
-		}*/
+			//left paddle
+			glBindTexture(GL_TEXTURE_2D, yellow);
+			modelMatrix.identity();
+			modelMatrix.Translate(0.0, left_y_pos, 0.0);
+			program.setModelMatrix(modelMatrix);
+			program.setProjectionMatrix(projectionMatrix);
+			program.setViewMatrix(viewMatrix);
 
-		if (b == 0) {
-			ball_pos_x += 1.25 * elapsed;
-			ball_pos_y -= 1.25 * elapsed;
-			r = 0;
-		}
+			float vertices[] = { 0.0f, 0.0f, 0.0f, 0.8, 0.2f, 0.8f, 0.0f, 0.0, 0.2f, 0.8f , 0.2f, 0.0f };
 
-		if (ball_pos_y > 2.0 || b == 1) { // off top wall
-			b = 1;
-			if (r == 0) {
-				ball_pos_x -= 1.35 * elapsed;
-				ball_pos_y -= 1.25 * elapsed;
+			float t2[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
+			glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t2);
+			glEnableVertexAttribArray(program.texCoordAttribute);
+			if (keys[SDL_SCANCODE_W] && left_y_pos < 3.2) {
+				left_y_pos += elapsed * 2;
 			}
-			if (r == 1) {
-				ball_pos_x += 1.3 * elapsed;
-				ball_pos_y -= 1.25 * elapsed;
+			else if (keys[SDL_SCANCODE_S] && left_y_pos > 0.0) {
+				left_y_pos -= elapsed * 2;
 			}
-			if (r == 2) {
-				ball_pos_x += 1.24 * elapsed;
-				ball_pos_y -= 1.25 * elapsed;
+
+			glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices);
+			glEnableVertexAttribArray(program.positionAttribute);
+			glDrawArrays(GL_TRIANGLES, 0, 6);
+			glDisableVertexAttribArray(program.positionAttribute);
+
+			//right paddle
+			glBindTexture(GL_TEXTURE_2D, yellow);
+			modelMatrix.identity();
+			modelMatrix.Translate(0.0, right_y_pos, 0.0);
+			program.setModelMatrix(modelMatrix);
+			program.setProjectionMatrix(projectionMatrix);
+			program.setViewMatrix(viewMatrix);
+
+			float vertices1[] = { 6.8f, 0.0f, 6.8f,0.8f, 7.0f, 0.8f, 6.8f, 0.0f, 7.0f, 0.8f, 7.0f, 0.f };
+			float t3[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
+			glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t3);
+			glEnableVertexAttribArray(program.texCoordAttribute);
+			if (keys[SDL_SCANCODE_UP] && right_y_pos < 3.2) {
+				right_y_pos += elapsed * 2;
 			}
-			if (r == 3) {
-				ball_pos_x -= 1.27 * elapsed;
-				ball_pos_y -= 1.25 * elapsed;
+			else if (keys[SDL_SCANCODE_DOWN] && right_y_pos > 0.0) {
+				right_y_pos -= elapsed * 2;
 			}
-			r1 = rand() % 4;
-			r2 = rand() % 4;
-			r3 = rand() % 4;
-		}
-		if (ball_pos_y < -2.0 || b == 2) { // off bottom wall
-			b = 2;
-			if (r1 == 0) {
-				ball_pos_x += 1.24 * elapsed;
-				ball_pos_y += 1.4 * elapsed;
-			}
-			if (r1 == 1) {
-				ball_pos_x -= 1.27 * elapsed;
-				ball_pos_y += 1.25*elapsed;
-			}
-			if (r1 == 2) {
+
+			glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices1);
+			glEnableVertexAttribArray(program.positionAttribute);
+			glDrawArrays(GL_TRIANGLES, 0, 6);
+			glDisableVertexAttribArray(program.positionAttribute);
+
+			//ball
+			glBindTexture(GL_TEXTURE_2D, yellow);
+			modelMatrix.identity();
+			modelMatrix.Translate(ball_pos_x, ball_pos_y, 0.0);
+
+			program.setModelMatrix(modelMatrix);
+			program.setProjectionMatrix(projectionMatrix);
+			program.setViewMatrix(viewMatrix);
+
+			if (b == 0) {
+				prev_ball_x = ball_pos_x;
+				prev_ball_y = ball_pos_y;
 				ball_pos_x -= 1.3 * elapsed;
-				ball_pos_y += 1.25*elapsed;
-			}
-			if (r1 == 3) {
-				ball_pos_x -= 1.35 * elapsed;
-				ball_pos_y += 1.25*elapsed;
-			}
-			r2 = rand() % 4;
-			r3 = rand() % 4;
-		}
-		if ((ball_pos_x < -3.31 && ball_pos_x > -3.33 && ball_pos_y < left_y_pos + 0.4 && ball_pos_y > left_y_pos - 0.7) || b == 3) {
-			b = 3;
-			if (r2 == 0) {
-				ball_pos_x += 1.6 * elapsed;
 				ball_pos_y -= 1.3 * elapsed;
+				r = 0;
 			}
-			if (r2 == 1) {
-				ball_pos_x += 1.3 * elapsed;
-				ball_pos_y += 1.4 * elapsed;
-			}
-			if (r2 == 2) {
-				ball_pos_x += 1.7 * elapsed;
-				ball_pos_y -= 1.5 * elapsed;
-			}
-			if (r2 == 3) {
-				ball_pos_x += 1.2 * elapsed;
-				ball_pos_y += 1.7 *sin(3.1415926 / 180)* elapsed;
-			}
-			r = rand() % 4;
-			r1 = rand() % 4;
-			r3 = rand() % 4;
-		}
-		if ((ball_pos_x > 3.15 && ball_pos_x < 3.17 && ball_pos_y < right_y_pos + 0.4 && ball_pos_y > right_y_pos - 0.7) || b == 4) {
-			b = 4;
-			if (r3 == 0) {
-				ball_pos_x -= 1.8 * elapsed;
-				ball_pos_y += 1.7 * elapsed;
-			}
-			if (r3 == 1) {
-				ball_pos_x -= 1.6 * elapsed;
-				ball_pos_y -= 1.3 * elapsed;
-			}
-			if (r3 == 2) {
-				ball_pos_x -= 1.2 * elapsed;
-				ball_pos_y += 1.5 * elapsed;
-			}
-			if (r3 == 3) {
-				ball_pos_x -= 1.6 * elapsed;
-				ball_pos_y -= 1.6 * elapsed;
-			}
-			r = rand() % 4;
-			r1 = rand() % 4;
-			r2 = rand() % 4;
-		}
+			if (ball_pos_y >= 0.6 || b == 1) { // off top wall
+				OutputDebugString("top");
+				b = 1;
+				if (ball_pos_x <= prev_ball_x) {//coming from right
+					OutputDebugString("r");
+					if (r == 0) {
+						OutputDebugString("0");
+						ball_pos_x -= 1.75 * elapsed;
+						ball_pos_y -= 1.85 * elapsed;
+					}
+					if (r == 1) {
+						OutputDebugString("1");
+						ball_pos_x -= 1.7 * elapsed;
+						ball_pos_y -= 1.75 * elapsed;
+					}
+				}
+				else if (ball_pos_x >= prev_ball_x) { // coming from left
+					OutputDebugString("l");
+					if (r == 0) {
+						OutputDebugString("0");
+						ball_pos_x += 1.85 * elapsed;
+						ball_pos_y -= 1.75 * elapsed;
+					}
+					if (r == 1) {
+						OutputDebugString("1");
+						ball_pos_x += 1.84 * elapsed;
+						ball_pos_y -= 2.2 * elapsed;
+					}
+				}
 
-		float vertices2[] = { 0.15f, -0.15f, 0.15f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, -0.15f, 0.15f, -0.15f };
-		glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices2);
-		glEnableVertexAttribArray(program.positionAttribute);
+				r1 = (int)(rand() * 10) % 2;
+				r2 = (int)(rand() * 10) % 2;
+				r3 = (int)(rand() * 10) % 2;
+			}
+			if (ball_pos_y < -3.4 || b == 2) { // off bottom wall
+				b = 2;
+				if (ball_pos_x < prev_ball_x) {//comes from right
+					OutputDebugString("right");
+					prev_ball_x = ball_pos_x;
+					prev_ball_y = ball_pos_y;
+					if (r1 == 0) {
+						OutputDebugString("ro");
+						ball_pos_x -= 2.17 * elapsed;
+						ball_pos_y += 2.05*elapsed;
+					}
+					else {//if (r1  == 1) {
+						OutputDebugString("r1");
+						ball_pos_x -= 1.75 * elapsed;
+						ball_pos_y += 1.95*elapsed;
+					}
+				}
+				if (ball_pos_x >= prev_ball_x) {
+					OutputDebugString("left");
+					prev_ball_x = ball_pos_x;
+					prev_ball_y = ball_pos_y;
+					if (r1 == 0) {
+						OutputDebugString("l0");
+						prev_ball_x = ball_pos_x;
+						prev_ball_y = ball_pos_y;
+						ball_pos_x += 2.24 * elapsed;
+						ball_pos_y += 2.2 * elapsed;
+					}
 
-		float t4[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
-		glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t4);
-		glEnableVertexAttribArray(program.texCoordAttribute);
+					if (r1 == 1) {
+						OutputDebugString("l1");
+						ball_pos_x += 2.03 * elapsed;
+						ball_pos_y += 2.25*elapsed;
+					}
+				}
+				r2 = (int)(rand() * 10) % 2;
+				r3 = (int)(rand() * 10) % 2;
+			}
 
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glDisableVertexAttribArray(program.positionAttribute);
+			if ((ball_pos_x < -3.2 && ball_pos_x > -3.5  && ball_pos_y < left_y_pos - 2.7 && ball_pos_y > left_y_pos - 3.5) || b == 3) { //left paddle
+				b = 3;
 
-		if (ball_pos_x < -3.32) { // left paddle lost
-			
-			glBindTexture(GL_TEXTURE_2D, right);
+				if (ball_pos_y < prev_ball_y) { //coming from top
+					OutputDebugString("leftpaddletop");
+					prev_ball_x = ball_pos_x;
+					prev_ball_y = ball_pos_y;
+					if (r2 == 0) {
+						ball_pos_x += 1.8 * elapsed;
+						ball_pos_y -= 2.3 * elapsed;
+					}
+					if (r2 == 1) {
+						ball_pos_x += 1.7 * elapsed;
+						ball_pos_y -= 1.8 * elapsed;
+					}
+				}
+				if (ball_pos_y >= prev_ball_y) { //coming form bottom
+					OutputDebugString("leftpaddlebottom");
+					prev_ball_x = ball_pos_x;
+					prev_ball_y = ball_pos_y;
+					if (r2 == 0) {
+						ball_pos_x += 2.3 * elapsed;
+						ball_pos_y += 2.04 * elapsed;
+					}
 
-			float v9[] = { -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5 };
-			glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, v9);
+					if (r2 == 1) {
+						ball_pos_x += 2.2 * elapsed;
+						ball_pos_y += 1.79 * elapsed;
+					}
+				}
+				r = rand() % 2;
+				r1 = rand() % 2;
+				r3 = rand() % 2;
+			}
+			if ((ball_pos_x > 3.35 && ball_pos_x < 3.45 && ball_pos_y < right_y_pos - 2.6 && ball_pos_y > right_y_pos - 3.5) || b == 4) {
+				if (ball_pos_y <= prev_ball_y) { // comes from top
+					prev_ball_x = ball_pos_x;
+					prev_ball_y = ball_pos_y;
+					OutputDebugString("41");
+					if (r3 == 0) {
+						OutputDebugString("41a");
+						ball_pos_x -= 1.86 * elapsed;
+						ball_pos_y -= 2.13 * elapsed;
+					}
+					//if (r3 == 1) {
+					else {
+						OutputDebugString("41b");
+
+						ball_pos_x -= 1.96 * elapsed;
+						ball_pos_y -= 1.9 * elapsed;
+					}
+				}
+
+				else if (ball_pos_y >= prev_ball_y) { // comes from bottom
+					prev_ball_x = ball_pos_x;
+					prev_ball_y = ball_pos_y;
+					OutputDebugString("42");
+					if (r3 == 0) {
+						OutputDebugString("42a");
+
+						ball_pos_x -= 1.8 * elapsed;
+						ball_pos_y += 1.94 * elapsed;
+					}
+
+					if (r3 == 1) {
+						OutputDebugString("42b");
+
+						ball_pos_x -= 1.8 * elapsed;
+						ball_pos_y += 1.9 * elapsed;
+					}
+				}
+
+				r = rand() % 2;
+				r1 = rand() % 2;
+				r2 = rand() % 2;
+			}
+
+			float vertices2[] = { 3.4f, 3.4f, 3.4f, 3.6f, 3.6f, 3.6f, 3.4f, 3.4f, 3.6f, 3.6f, 3.6f, 3.4f };
+			glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices2);
 			glEnableVertexAttribArray(program.positionAttribute);
 
-			float t9[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
-			glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t9);
+			float t4[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
+			glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t4);
 			glEnableVertexAttribArray(program.texCoordAttribute);
-
-			modelMatrix.identity();
-
-			modelMatrix.Translate(-2.5, 1.0, 0);
-			angle += 30.0f*elapsed;
-			modelMatrix.Rotate(-1 * 2.0f*angle*(3.1415926 / 180));
-
-			program.setModelMatrix(modelMatrix);
-			program.setProjectionMatrix(projectionMatrix);
-			program.setViewMatrix(viewMatrix);
 
 			glDrawArrays(GL_TRIANGLES, 0, 6);
 			glDisableVertexAttribArray(program.positionAttribute);
-		}
-		if (ball_pos_x > 3.2) { // right paddle lost
-			OutputDebugString("saf");
-			modelMatrix.identity();
 
-			modelMatrix.Translate(-2.5, 1.0, 0);
-			angle += 30.0f*elapsed;
-			modelMatrix.Rotate(-1 * 2.0f*angle*(3.1415926 / 180));
+			if (ball_pos_x < -3.32) { // left paddle lost
 
-			program.setModelMatrix(modelMatrix);
-			program.setProjectionMatrix(projectionMatrix);
-			program.setViewMatrix(viewMatrix);
+				modelMatrix.identity();
+				modelMatrix.Translate(1.6, 3.0, 0);
+				program.setModelMatrix(modelMatrix);
 
-			glBindTexture(GL_TEXTURE_2D, left);
+				DrawText(&program, font, "right paddle won!", 0.25, 0.0);
 
-			float v10[] = { -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5 };
-			glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, v10);
-			glEnableVertexAttribArray(program.positionAttribute);
+				modelMatrix.identity();
+				modelMatrix.Translate(0.9, 1.0, 0);
+				program.setModelMatrix(modelMatrix);
+
+				DrawText(&program, font, "press space to end game!", 0.25, 0.0);
+				if (keys[SDL_SCANCODE_SPACE]) {
+					done = true;
+				}
+
+			}
+			if (ball_pos_x > 3.6) { // right paddle lost
+
+				modelMatrix.identity();
+				modelMatrix.Translate(1.6, 3.0, 0);
+				program.setModelMatrix(modelMatrix);
 
 
-			float t10[] = { 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0 };
-			glVertexAttribPointer(program.texCoordAttribute, 2, GL_FLOAT, false, 0, t10);
-			glEnableVertexAttribArray(program.texCoordAttribute);
-			
-			glDisableVertexAttribArray(program.positionAttribute);
+				DrawText(&program, font, "left paddle won!", 0.25, 0.0);
 
-			glDrawArrays(GL_TRIANGLES, 0, 6);
-		}
+				modelMatrix.identity();
+				modelMatrix.Translate(0.9, 1.0, 0);
+				program.setModelMatrix(modelMatrix);
+
+				DrawText(&program, font, "press space to end game!", 0.25, 0.0);
+				if (keys[SDL_SCANCODE_SPACE]) {
+					done = true;
+				}
+			}
+		
 		SDL_GL_SwapWindow(displayWindow);
 
 	}

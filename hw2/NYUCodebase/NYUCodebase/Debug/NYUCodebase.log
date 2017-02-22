@@ -1,45 +1,53 @@
 ﻿  main.cpp
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(48): warning C4018: '<': signed/unsigned mismatch
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(105): warning C4305: 'argument': truncation from 'double' to 'float'
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(230): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(231): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(238): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(239): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(242): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(243): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(246): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(247): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(250): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(251): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(260): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(261): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(264): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(265): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(268): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(269): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(272): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(273): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(49): warning C4018: '<': signed/unsigned mismatch
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(152): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(154): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(161): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(163): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(166): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(176): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(176): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(229): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(230): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(240): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(241): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(245): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(246): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(253): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(254): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(258): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(259): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(275): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(276): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(280): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
 c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(281): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(282): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(285): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(286): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(289): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(290): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(292): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(293): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(294): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(303): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(304): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(307): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(308): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(311): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(312): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(298): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(299): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(314): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
 c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(315): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(316): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(350): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(365): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(137): warning C4101: 'endY': unreferenced local variable
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(137): warning C4101: 'startY': unreferenced local variable
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(137): warning C4101: 'startX': unreferenced local variable
-c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(137): warning C4101: 'endX': unreferenced local variable
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(318): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(319): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(327): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(328): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(332): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(333): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(347): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(348): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(354): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(355): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(366): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(367): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(373): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(374): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(397): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(403): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(415): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(422): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(144): warning C4101: 'endY': unreferenced local variable
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(144): warning C4101: 'startY': unreferenced local variable
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(144): warning C4101: 'startX': unreferenced local variable
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\nyucodebase\nyucodebase\main.cpp(144): warning C4101: 'endX': unreferenced local variable
   NYUCodebase.vcxproj -> C:\Users\Zaoli Jiang\Desktop\CS3113-master\project_template\Windows\NYUCodebase\Debug\NYUCodebase.exe
   NYUCodebase.vcxproj -> C:\Users\Zaoli Jiang\Desktop\CS3113-master\project_template\Windows\NYUCodebase\Debug\NYUCodebase.pdb (Full PDB)
