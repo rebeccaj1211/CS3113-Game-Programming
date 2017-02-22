@@ -50,8 +50,6 @@ void DrawText(ShaderProgram *program, int fontTexture, std::string text, float s
 		int spriteIndex = (int)text[i];
 		float texture_x = (float)(spriteIndex % 16) / 16.0f;
 		float texture_y = (float)(spriteIndex / 16) / 16.0f;
-		//float texture_x = (float)((int)text[i] % 16) / 16.0f;
-		//float texture_y = (float)((int)text[i] / 16) / 16.0f;
 
 		vertexData.insert(vertexData.end(), {
 			((size + spacing) * i) + (-0.5f * size), 0.5f * size,
@@ -94,7 +92,6 @@ int main(int argc, char *argv[])
 #endif
 	SDL_Event event;
 	glViewport(0, 0, 640, 360);
-	//ShaderProgram program(RESOURCE_FOLDER"vertex.glsl", RESOURCE_FOLDER "fragment.glsl");
 	ShaderProgram program(RESOURCE_FOLDER"vertex_textured.glsl", RESOURCE_FOLDER"fragment_textured.glsl");
 	GLuint left = LoadTexture(RESOURCE_FOLDER"left.png");
 	GLuint right = LoadTexture(RESOURCE_FOLDER"right.png");
@@ -103,7 +100,6 @@ int main(int argc, char *argv[])
 	Matrix projectionMatrix;
 	Matrix modelMatrix;
 	Matrix viewMatrix;
-	//projectionMatrix.setOrthoProjection(-3.55, 3.55, -2.0f, 2.0f, -1.0f, 1.0f);
 	projectionMatrix.setOrthoProjection(0.0, 7.0, 0.0, 4.0f, -1.0f, 1.0f);
 	glUseProgram(program.programID);
 
@@ -123,8 +119,6 @@ int main(int argc, char *argv[])
 	float prev_ball_x = 0.0;
 	float prev_ball_y = 0.0;
 	GLuint font = LoadTexture(RESOURCE_FOLDER"font2.png");
-	bool game = true;
-
 
 	while (!done) {
 		while (SDL_PollEvent(&event)) {
@@ -231,25 +225,19 @@ int main(int argc, char *argv[])
 				r = 0;
 			}
 			if (ball_pos_y >= 0.6 || b == 1) { // off top wall
-				OutputDebugString("top");
 				b = 1;
 				if (ball_pos_x <= prev_ball_x) {//coming from right
-					OutputDebugString("r");
 					if (r == 0) {
-						OutputDebugString("0");
 						ball_pos_x -= 1.75 * elapsed;
 						ball_pos_y -= 1.85 * elapsed;
 					}
 					if (r == 1) {
-						OutputDebugString("1");
 						ball_pos_x -= 1.7 * elapsed;
 						ball_pos_y -= 1.75 * elapsed;
 					}
 				}
 				else if (ball_pos_x >= prev_ball_x) { // coming from left
-					OutputDebugString("l");
 					if (r == 0) {
-						OutputDebugString("0");
 						ball_pos_x += 1.85 * elapsed;
 						ball_pos_y -= 1.75 * elapsed;
 					}
@@ -267,26 +255,21 @@ int main(int argc, char *argv[])
 			if (ball_pos_y < -3.4 || b == 2) { // off bottom wall
 				b = 2;
 				if (ball_pos_x < prev_ball_x) {//comes from right
-					OutputDebugString("right");
 					prev_ball_x = ball_pos_x;
 					prev_ball_y = ball_pos_y;
 					if (r1 == 0) {
-						OutputDebugString("ro");
 						ball_pos_x -= 2.17 * elapsed;
 						ball_pos_y += 2.05*elapsed;
 					}
 					else {//if (r1  == 1) {
-						OutputDebugString("r1");
 						ball_pos_x -= 1.75 * elapsed;
 						ball_pos_y += 1.95*elapsed;
 					}
 				}
 				if (ball_pos_x >= prev_ball_x) {
-					OutputDebugString("left");
 					prev_ball_x = ball_pos_x;
 					prev_ball_y = ball_pos_y;
 					if (r1 == 0) {
-						OutputDebugString("l0");
 						prev_ball_x = ball_pos_x;
 						prev_ball_y = ball_pos_y;
 						ball_pos_x += 2.24 * elapsed;
@@ -294,7 +277,6 @@ int main(int argc, char *argv[])
 					}
 
 					if (r1 == 1) {
-						OutputDebugString("l1");
 						ball_pos_x += 2.03 * elapsed;
 						ball_pos_y += 2.25*elapsed;
 					}
@@ -307,7 +289,6 @@ int main(int argc, char *argv[])
 				b = 3;
 
 				if (ball_pos_y < prev_ball_y) { //coming from top
-					OutputDebugString("leftpaddletop");
 					prev_ball_x = ball_pos_x;
 					prev_ball_y = ball_pos_y;
 					if (r2 == 0) {
@@ -319,8 +300,7 @@ int main(int argc, char *argv[])
 						ball_pos_y -= 1.8 * elapsed;
 					}
 				}
-				if (ball_pos_y >= prev_ball_y) { //coming form bottom
-					OutputDebugString("leftpaddlebottom");
+				if (ball_pos_y >= prev_ball_y) { //coming from bottom
 					prev_ball_x = ball_pos_x;
 					prev_ball_y = ball_pos_y;
 					if (r2 == 0) {
@@ -341,35 +321,25 @@ int main(int argc, char *argv[])
 				if (ball_pos_y <= prev_ball_y) { // comes from top
 					prev_ball_x = ball_pos_x;
 					prev_ball_y = ball_pos_y;
-					OutputDebugString("41");
 					if (r3 == 0) {
-						OutputDebugString("41a");
 						ball_pos_x -= 1.86 * elapsed;
 						ball_pos_y -= 2.13 * elapsed;
 					}
 					//if (r3 == 1) {
 					else {
-						OutputDebugString("41b");
-
 						ball_pos_x -= 1.96 * elapsed;
 						ball_pos_y -= 1.9 * elapsed;
 					}
 				}
-
 				else if (ball_pos_y >= prev_ball_y) { // comes from bottom
 					prev_ball_x = ball_pos_x;
 					prev_ball_y = ball_pos_y;
-					OutputDebugString("42");
 					if (r3 == 0) {
-						OutputDebugString("42a");
-
 						ball_pos_x -= 1.8 * elapsed;
 						ball_pos_y += 1.94 * elapsed;
 					}
 
 					if (r3 == 1) {
-						OutputDebugString("42b");
-
 						ball_pos_x -= 1.8 * elapsed;
 						ball_pos_y += 1.9 * elapsed;
 					}
