@@ -1,0 +1,27 @@
+﻿  ShaderProgram.cpp
+  Matrix.cpp
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(148): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(149): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(150): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(151): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(165): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(166): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(167): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(168): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(172): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(173): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(174): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(175): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(213): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\matrix.cpp(214): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(56): warning C4018: '<': signed/unsigned mismatch
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(221): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(222): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(223): warning C4305: '-=': truncation from 'double' to 'float'
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(256): warning C4018: '<': signed/unsigned mismatch
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(343): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\zaoli jiang\desktop\cs3113-master\project_template\windows\hw3\nyucodebase\main.cpp(365): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  NYUCodebase.vcxproj -> C:\Users\Zaoli Jiang\Desktop\CS3113-master\project_template\Windows\hw3\Debug\NYUCodebase.exe
+  NYUCodebase.vcxproj -> C:\Users\Zaoli Jiang\Desktop\CS3113-master\project_template\Windows\hw3\Debug\NYUCodebase.pdb (Full PDB)
