@@ -181,14 +181,14 @@ vector<GameObject> blockies;
 
 // Creates Enemies
 void start(ShaderProgram* program, Matrix& modelMatrix, SS enemy) {
-		GameObject enemyObj(-2.5, 5.3, enemy);
+		/*GameObject enemyObj(-2.5, 5.3, enemy);
 		enemyObj.speedx = 1.0;//0.5;
 		enemyObj.speedy = 0.0;// 0.7;
 		enemyObj.dead = false;
 		modelMatrix.identity();
 		modelMatrix.Translate(enemyObj.x, enemyObj.y, 0.0);
 		program->setModelMatrix(modelMatrix);
-		enemies.push_back(enemyObj);
+		enemies.push_back(enemyObj);*/
 
 		GameObject enemyObj1(2.5, 3.8, enemy);
 		enemyObj1.speedx = 1.0;//0.5;
@@ -252,7 +252,7 @@ int main(int argc, char *argv[]) {
 
 	glUseProgram(program.programID);
 
-	start(&program, modelMatrix, enemy);
+	//start(&program, modelMatrix, enemy);
 
 	// Initializing Objects
 	GameObject playerObj(0.0f, -1.75f, player);
@@ -310,21 +310,23 @@ int main(int argc, char *argv[]) {
 		if (state == GAME_STATE_TITLE || state == GAME_STATE_LOST || state == GAME_STATE_WON) {
 			if (keys[SDL_SCANCODE_RETURN]) {
 				moveup = true;
-				state = GAME_STATE_GAME;
+							
 				
-				for (int i = 0; i < enemies.size(); ++i) {
-					enemies[i].dead = true;
+				if (enemies.size() != 0){
+					for (int i = 0; i < enemies.size(); ++i) {
+						enemies.clear();
+					}
 				}
-				for (int i = 0; i < enemies.size(); ++i) {
-					modelMatrix.identity();
-					modelMatrix.Translate(enemies[i].x, enemies[i].y, 0.0);
-					program.setModelMatrix(modelMatrix);
-					enemies[i].dead = false;
+				else{
+					start(&program, modelMatrix, enemy);
 				}
+				
 				playerObj.x = 0.0;
 				playerObj.y = -1.75;
+				state = GAME_STATE_GAME;
 			}
 		}
+
 		else if (state == GAME_STATE_GAME) {
 			moving = false;
 			for (int k = 0; k < 17; k++){
@@ -503,18 +505,18 @@ int main(int argc, char *argv[]) {
 			
 			break;
 		case GAME_STATE_GAME:
-			if (keys[SDL_SCANCODE_UP]) {
+			//if (keys[SDL_SCANCODE_UP]) {
 
 				//moveup = true;
 
 				//if (playerObj.cTop){
 					//moveup = false;
 				//}
-				if (!playerObj.cTop){
-					playerObj.y += elapsed * playerObj.speedy;
+				//if (!playerObj.cTop){
+					//playerObj.y += elapsed * playerObj.speedy;
 
-				}
-			}
+				//}
+			//}
 			float transx = -playerObj.x;
 			float transy = -playerObj.y;
 			if (playerObj.x < 4.0 && playerObj.x > -4.0){
@@ -551,21 +553,27 @@ int main(int argc, char *argv[]) {
 					))){
 					//moveup = true;
 					
+					
 					if ((blockies[i].x - (blockies[i].size / 2) <= playerObj.x + (playerObj.size / 2))){
 					
 						playerObj.cRight = true;
 						blockies[i].cLeft = true;
 						//moveup = true;
 					}
-					if (blockies[i].y + (blockies[i].size / 2) >= playerObj.y - (playerObj.size / 2)){
-						playerObj.cTop = true;
+					//if (blockies[i].y + (blockies[i].size / 2) >= playerObj.y - (playerObj.size / 2)){
+					if (blockies[i].y > playerObj.y){
+					playerObj.cTop = true;
 						blockies[i].cBottom = true;
+						float penetration = fabs(blockies[i].y + (blockies[i].size / 2) - playerObj.y + (playerObj.size / 2));
+						playerObj.y -= 0;
+						
 						//moveup = true;
 					}
 					if (blockies[i].x + (blockies[i].size / 2) >= playerObj.x - (playerObj.size / 2)){
 						playerObj.cLeft = true;
 						blockies[i].cRight = true;
 						moveup = true;
+						
 					}
 					//if (blockies[i].y + (blockies[i].size / 2) <= playerObj.y + (playerObj.size / 2)){
 					if (blockies[i].y < playerObj.y){
@@ -574,6 +582,8 @@ int main(int argc, char *argv[]) {
 						playerObj.y = blockies[i].y +blockies[i].size;
 						moveup = true;
 						moving = false;
+						float penetration = fabs(blockies[i].y + (blockies[i].size / 2) - playerObj.y + (playerObj.size / 2));
+						playerObj.y += penetration + 0.01;
 					
 						
 					}
@@ -616,28 +626,7 @@ int main(int argc, char *argv[]) {
 				}
 			}
 
-			for (int i = 0; i < enemies.size(); ++i) {
-				if (!enemies[i].dead) {
-					enemies[i].x += elapsed * enemies[i].speedx;
-					modelMatrix.identity();
-					modelMatrix.Translate(enemies[i].x, enemies[i].y, 0);
-					program.setModelMatrix(modelMatrix);
-					enemies[i].sprite.Draw(&program);
-				}
-			}
-
-			for (int i = 0; i < enemies.size(); ++i) {
-				if (enemies[i].x > 3.35) {
-					//for (int i = 0; i < enemies.size(); ++i) {
-						enemies[i].speedx = -0.75;
-					//}
-				}
-				if (enemies[i].x < -3.35) {
-					//for (int i = 0; i < enemies.size(); ++i) {
-						enemies[i].speedx = 0.75;
-					//}
-				}
-			}
+			
 
 			modelMatrix.identity();
 			modelMatrix.Translate(playerObj.x, playerObj.y, 0.0);
@@ -694,14 +683,37 @@ int main(int argc, char *argv[]) {
 					}
 				}
 			}
+			for (int i = 0; i < enemies.size(); ++i) {
+				if (!enemies[i].dead) {
+					enemies[i].x += elapsed * enemies[i].speedx;
+					modelMatrix.identity();
+					modelMatrix.Translate(enemies[i].x, enemies[i].y, 0);
+					program.setModelMatrix(modelMatrix);
+					enemies[i].sprite.Draw(&program);
+				}
+			}
 
+			for (int i = 0; i < enemies.size(); ++i) {
+				if (enemies[i].x > 3.35) {
+					//for (int i = 0; i < enemies.size(); ++i) {
+					enemies[i].speedx = -0.75;
+					//}
+				}
+				if (enemies[i].x < -3.35) {
+					//for (int i = 0; i < enemies.size(); ++i) {
+					enemies[i].speedx = 0.75;
+					//}
+				}
+			}
 			shootingDelay += elapsed;
 			playerSD += elapsed;
 			if (shootingDelay > 0.55) {
-				int randomEnemy = rand() % enemies.size();
-				while (enemies[randomEnemy].dead == true){
-					randomEnemy = rand() % enemies.size();
-				}
+				if (enemies.size() != 0){
+					int randomEnemy = rand() % enemies.size();
+					while (enemies[randomEnemy].dead == true){
+						randomEnemy = rand() % enemies.size();
+					}
+
 					shootingDelay = 0;
 					GameObject enemyBulletObj(0.0, -10.0, enemyBullet);
 					enemyBulletObj.speedy = 2.0;
@@ -709,6 +721,10 @@ int main(int argc, char *argv[]) {
 					enemyBulletObj.y = enemies[randomEnemy].y - (enemyBulletObj.size / 2) - (enemies[randomEnemy].size / 2);
 					enemyBulletObj.dead = false;
 					enemyBullets.push_back(enemyBulletObj);
+				}
+				else{
+					start(&program, modelMatrix, enemy);
+				}
 			}
 			for (int i = 0; i < enemyBullets.size(); i++){
 				enemyBullets[i].y -= elapsed * enemyBullets[i].speedy;
