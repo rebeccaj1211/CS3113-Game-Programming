@@ -204,6 +204,15 @@ void start(ShaderProgram* program, Matrix& modelMatrix, SS enemy) {
 		modelMatrix.Translate(enemyObj2.x, enemyObj2.y, 0.0);
 		program->setModelMatrix(modelMatrix);
 		enemies.push_back(enemyObj2);
+
+		GameObject enemyObj3(-1.75, -0.2, enemy);
+		enemyObj3.speedx = 1.0;//0.5;
+		enemyObj3.speedy = 0.0;// 0.7;
+		enemyObj3.dead = false;
+		modelMatrix.identity();
+		modelMatrix.Translate(enemyObj3.x, enemyObj3.y, 0.0);
+		program->setModelMatrix(modelMatrix);
+		enemies.push_back(enemyObj3);
 }
 
 int main(int argc, char *argv[]) {
@@ -374,10 +383,7 @@ int main(int argc, char *argv[]) {
 					moving = true;
 					moveup = true;
 					
-					if (playerObj.cTop){
-						moveup = false;
-					}
-					if (moveup){
+					if (!playerObj.cTop){
 							playerObj.y += elapsed * playerObj.speedy;
 					}
 				}
@@ -486,6 +492,18 @@ int main(int argc, char *argv[]) {
 			
 			break;
 		case GAME_STATE_GAME:
+			if (keys[SDL_SCANCODE_UP]) {
+
+				//moveup = true;
+
+				//if (playerObj.cTop){
+					//moveup = false;
+				//}
+				if (!playerObj.cTop){
+					playerObj.y += elapsed * playerObj.speedy;
+
+				}
+			}
 			float transx = -playerObj.x;
 			float transy = -playerObj.y;
 			if (playerObj.x < 4.0 && playerObj.x > -4.0){
@@ -575,6 +593,7 @@ int main(int argc, char *argv[]) {
 			if (playerObj.y < -1.7){
 				moveup = true;
 			}
+			
 			for (int i = 0; i < enemies.size(); i++){
 				if (enemies[i].y > -1.75){
 					if (!enemies[i].cBottom){
@@ -667,7 +686,7 @@ int main(int argc, char *argv[]) {
 
 			shootingDelay += elapsed;
 			playerSD += elapsed;
-			if (shootingDelay > 0.75) {
+			if (shootingDelay > 0.55) {
 				int randomEnemy = rand() % enemies.size();
 				while (enemies[randomEnemy].dead == true){
 					randomEnemy = rand() % enemies.size();
