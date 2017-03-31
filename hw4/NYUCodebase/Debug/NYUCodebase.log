@@ -1,45 +1,45 @@
-﻿Build started 3/30/2017 11:51:14 PM.
+﻿Build started 3/30/2017 11:57:00 PM.
      1>Project "C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw4\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /IC:\glew\include /IC:\SDL2_mixer\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(35): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(161): warning C4305: 'initializing' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(181): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(190): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(199): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(208): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(227): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(236): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(237): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(238): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(38): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(164): warning C4305: 'initializing' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(184): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(193): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(202): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(211): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(230): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
      1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(239): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(240): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(248): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(257): warning C4305: '=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(304): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(307): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(322): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(328): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(336): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(343): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(348): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(472): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(477): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(484): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(489): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(524): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(532): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(241): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(242): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(243): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(251): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(260): warning C4305: '=' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(315): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(318): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(333): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(339): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(347): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(354): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(359): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(483): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(488): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(495): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(500): warning C4305: 'argument' : truncation from 'double' to 'float'
      1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(535): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(572): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(597): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(543): warning C4305: 'argument' : truncation from 'double' to 'float'
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(546): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(583): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(608): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(618): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(636): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(649): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(657): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(672): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(702): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(619): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(629): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(647): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(660): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(668): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(683): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw4\nyucodebase\main.cpp(713): warning C4018: '<' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw4\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw4\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw4\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\main.obj
          Debug\Matrix.obj
@@ -49,4 +49,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.08
+Time Elapsed 00:00:02.83
