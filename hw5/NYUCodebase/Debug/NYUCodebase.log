@@ -1,50 +1,41 @@
-﻿Build started 4/8/2017 8:24:03 PM.
-     1>Project "C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5 - Copy\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/8/2017 8:39:44 PM.
+     1>Project "C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5\NYUCodebase\NYUCodebase.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /IC:\SDL2\include /IC:\SDL2_image\include /IC:\glew\include /IC:\SDL2_mixer\include /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _WINDOWS /D _MBCS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(97): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(100): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(108): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(111): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(120): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(127): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(134): warning C4305: '+=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(141): warning C4305: '-=' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(148): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(207): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(277): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(280): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(294): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(295): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(297): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(323): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(341): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(365): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(373): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(402): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(419): warning C4305: 'argument' : truncation from 'double' to 'float'
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(490): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(491): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(503): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(504): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(506): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(507): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(518): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(519): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(521): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(522): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(533): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(534): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(536): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
-     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5 - copy\nyucodebase\main.cpp(537): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(148): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(207): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(277): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(280): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(294): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(295): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(297): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(323): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(341): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(365): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(373): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(402): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(490): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(491): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(503): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(504): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(506): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(507): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(518): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(519): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(521): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(522): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(533): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(534): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(536): warning C4244: '-=' : conversion from 'double' to 'float', possible loss of data
+     1>c:\users\rebeccaj1211\desktop\cs3113-game-programming-master\hw5\nyucodebase\main.cpp(537): warning C4244: '+=' : conversion from 'double' to 'float', possible loss of data
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5 - Copy\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5 - Copy\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5 - Copy\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5\Debug\NYUCodebase.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\SDL2_mixer\lib\x86 /LIBPATH:C:\SDL2\lib\x86 /LIBPATH:C:\SDL2_image\lib\x86 /LIBPATH:C:\glew\lib\Release\Win32 SDL2.lib SDL2_mixer.lib glew32.lib SDL2main.lib SDL2_image.lib OpenGL32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5\Debug\NYUCodebase.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5\Debug\NYUCodebase.lib" /MACHINE:X86 Debug\main.obj
          Debug\Matrix.obj
          Debug\ShaderProgram.obj
-         NYUCodebase.vcxproj -> C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5 - Copy\Debug\NYUCodebase.exe
-     1>Done Building Project "C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5 - Copy\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
+         NYUCodebase.vcxproj -> C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5\Debug\NYUCodebase.exe
+     1>Done Building Project "C:\Users\rebeccaj1211\Desktop\CS3113-Game-Programming-master\hw5\NYUCodebase\NYUCodebase.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:04.32
+Time Elapsed 00:00:08.15

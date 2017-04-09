@@ -35,7 +35,7 @@ public:
 	Vector(){}
 	Vector(float fx, float fy, float fz):x(fx),y(fy),z(fz){}
 	float length()const{
-		return (sqrtf(pow(x, 2) + pow(y, 2) + pow(z, 2)));
+		return (sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2)));
 	}
 	void normalize(){
 		if (length() > 0){
@@ -91,24 +91,24 @@ public:
 	Vector pen;
 
 	void boaderCollision(){
-		if (pos.x > 6 || pos.x < -6){
+		if (pos.x > 6.0f || pos.x < -6.0f){
 			velx = -velx;
-			if (pos.x > 5){
-				pos.x -= 0.1;
+			if (pos.x > 5.0f){
+				pos.x -= 0.1f;
 			}
 			else{
-				pos.x += 0.1;
+				pos.x += 0.1f;
 			}
 			//vely = -vely;
 		}
-		if (pos.y > 3 || pos.y < -3){
+		if (pos.y > 3.0f || pos.y < -3.0f){
 			//velx = -velx;
 			vely = -vely;
-			if (pos.y > 2){
-				pos.x -= 0.1;
+			if (pos.y > 2.0f){
+				pos.x -= 0.1f;
 			}
 			else{
-				pos.y += 0.1;
+				pos.y += 0.1f;
 			}
 		}
 		
@@ -117,28 +117,28 @@ public:
 		if (checkSATCollision(world, top.world, pen)) {
 			//pen.normalize();
 			//enemy1.pos.x += (pen.x/4);
-			pos.y -= 0.1;
+			pos.y -= 0.1f;
 			velx = -velx;
 			vely = -vely;
 		}
 		if (checkSATCollision(world, bottom.world, pen)) {
 			//pen.normalize();
 			//enemy1.pos.x += (pen.x/4);
-			pos.y += 0.1;
+			pos.y += 0.1f;
 			velx = -velx;
 			vely = -vely;
 		}
 		if (checkSATCollision(world, left.world, pen)) {
 			//pen.normalize();
 			//enemy1.pos.x += (pen.x/4);
-			pos.x += 0.1;
+			pos.x += 0.1f;
 			velx = -velx;
 			vely = -vely;
 		}
 		if (checkSATCollision(world, right.world, pen)) {
 			//pen.normalize();
 			//enemy1.pos.x += (pen.x/4);
-			pos.x -= 0.1;
+			pos.x -= 0.1f;
 			velx = -velx;
 			vely = -vely;
 		}
@@ -416,15 +416,15 @@ int main(int argc, char *argv[]) {
 	Matrix projectionMatrix;
 	Matrix modelMatrix;
 	Matrix viewMatrix;
-	projectionMatrix.setOrthoProjection(-3.55, 3.55, -2.0, 2.0, -1.0, 1.0);
+	projectionMatrix.setOrthoProjection(-3.55f, 3.55f, -2.0f, 2.0f, -1.0f, 1.0f);
 
 	glUseProgram(program.programID);
 
 
 	// Initializing Objects
-	Entity player(1,1,-1,1,-1,-1,-1,-1,1,-1,1,1);
-	Entity enemy1(1, 1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1);
-	Entity enemy2(1, 1, -1, 1, -1, -1, -1, -1, 1, -1, 1, 1);
+	Entity player(1.0f, 1.0f, -1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, 1.0f, -1.0f, 1.0f, 1.0f);
+	Entity enemy1(1.0f, 1.0f, -1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, 1.0f, -1.0f, 1.0f, 1.0f);
+	Entity enemy2(1.0f, 1.0f, -1.0f, 1.0f, -1.0f, -1.0f, -1.0f, -1.0f, 1.0f, -1.0f, 1.0f, 1.0f);
 	
 	player.scale.x = 0.5;
 	player.scale.y = 0.5;
@@ -433,26 +433,26 @@ int main(int argc, char *argv[]) {
 	enemy2.scale.x = 0.5;
 	enemy2.scale.y = 0.5;
 
-	player.velx = -1;
-	player.vely = 1;
-	enemy1.velx = -1;
-	enemy1.vely = -1;
-	enemy2.velx = -1;
-	enemy2.vely = -1;
+	player.velx = -1.0f;
+	player.vely = 1.0f;
+	enemy1.velx = -1.0f;
+	enemy1.vely = -1.0f;
+	enemy2.velx = -1.0f;
+	enemy2.vely = -1.0f;
 
 	Entity top;
-	top.makeWorld(4, 3, -4, 3, -4, 2, -4, 2, 4, 2, 4, 3);
+	top.makeWorld(4.0f, 3.0f, -4.0f, 3.0f, -4.0f, 2.0f, -4.0f, 2.0f, 4.0f, 2.0f, 4.0f, 3.0f);
 	Entity bottom;
-	bottom.makeWorld(4, -2, -4, -2, -4, -3, -4, -3, 4, -3, 4, -2);
+	bottom.makeWorld(4.0f, -2.0f, -4.0f, -2.0f, -4.0f, -3.0f, -4.0f, -3.0f, 4.0f, -3.0f, 4.0f, -2.0f);
 	Entity left;
-	left.makeWorld(-4, 3, -5, 3, -5, -3, -5, -3, -4, -3, -4, 3);
+	left.makeWorld(-4.0f, 3.0f, -5.0f, 3.0f, -5.0f, -3.0f, -5.0f, -3.0f, -4.0f, -3.0f, -4.0f, 3.0f);
 	Entity right;
-	right.makeWorld(5, 3, 4, 3, 4, -3, 4, -3, 5, -3, 5, 3);
+	right.makeWorld(5.0f, 3.0f, 4.0f, 3.0f, 4.0f, -3.0f, 4.0f, -3.0f, 5.0f, -3.0f, 5.0f, 3.0f);
 
 	Vector pen;
 	
 
-	float lastFrameTicks = 0.0;
+	float lastFrameTicks = 0.0f;
 	SDL_Event event;
 	bool done = false;
 	while (!done) {
@@ -486,7 +486,7 @@ int main(int argc, char *argv[]) {
 		program.setProjectionMatrix(projectionMatrix);
 		program.setViewMatrix(viewMatrix);
 		
-		float angle = 30 * elapsed;
+		float angle = 30.0f * elapsed;
 		enemy1.rotation += -1 * 2.0f*angle*(3.1415926 / 180);
 		enemy2.rotation += -1 * 2.0f*-angle*(3.1415926 / 180);
 
@@ -500,11 +500,11 @@ int main(int argc, char *argv[]) {
 		if (checkSATCollision(player.world, enemy1.world, pen)) {
 			//pen.normalize();
 			
-			player.pos.x += (pen.x / 2) *1.01;
-			player.pos.y += (pen.y / 2) *1.01;
+			player.pos.x += (pen.x / 2.0) *1.01f;
+			player.pos.y += (pen.y / 2.0) *1.01f;
 
-			enemy1.pos.x -= (pen.x / 2) *1.01;
-			enemy1.pos.y -= (pen.y / 2) *1.01;
+			enemy1.pos.x -= (pen.x / 2.0) *1.01f;
+			enemy1.pos.y -= (pen.y / 2.0) *1.01f;
 			
 			player.velx = -player.velx;
 			player.vely = -player.vely;
@@ -515,11 +515,11 @@ int main(int argc, char *argv[]) {
 		if (checkSATCollision(player.world, enemy2.world, pen)) {
 			//pen.normalize();
 			
-			player.pos.x += (pen.x / 2) *1.01;
-			player.pos.y += (pen.y / 2) *1.01;
+			player.pos.x += (pen.x / 2.0) *1.01f;
+			player.pos.y += (pen.y / 2.0) *1.01f;
 
-			enemy2.pos.x -= (pen.x / 2) *1.01;
-			enemy2.pos.y -= (pen.y / 2) *1.01;
+			enemy2.pos.x -= (pen.x / 2.0) *1.01f;
+			enemy2.pos.y -= (pen.y / 2.0) *1.01f;
 
 			player.velx = -player.velx;
 			player.vely = -player.vely;
@@ -530,11 +530,11 @@ int main(int argc, char *argv[]) {
 		if (checkSATCollision(enemy1.world, enemy2.world, pen)) {
 			//pen.normalize();
 			
-			enemy1.pos.x += (pen.x / 2 ) *1.01;
-			enemy1.pos.y -= (pen.y / 2) *1.01;
+			enemy1.pos.x += (pen.x / 2.0) *1.01f;
+			enemy1.pos.y -= (pen.y / 2.0) *1.01f;
 
-			enemy2.pos.x -= (pen.x / 2) *1.01;
-			enemy2.pos.y += (pen.y / 2) *1.01;
+			enemy2.pos.x -= (pen.x / 2.0) *1.01f;
+			enemy2.pos.y += (pen.y / 2.0) *1.01f;
 
 			enemy1.velx = -enemy1.velx;
 			enemy1.vely = -enemy1.vely;
